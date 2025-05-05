@@ -37,6 +37,9 @@ public class OpenAIServiceImpl implements OpenAIService {
 		PromptTemplate promptTemplate = new PromptTemplate(question.question());
 		Prompt prompt = promptTemplate.create();
 		ChatResponse chatResponse = chatClient.prompt(prompt).call().chatResponse();
+		if (chatResponse == null || chatResponse.getResult() == null || chatResponse.getResult().getOutput() == null) {
+			throw new RuntimeException("Chat response or its components are null");
+		}
 		return new Answer(chatResponse.getResult().getOutput().getText());
 	}
 

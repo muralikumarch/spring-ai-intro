@@ -1,7 +1,5 @@
 package dev.murali.springaiintro.services;
 
-import org.springframework.web.bind.annotation.RequestBody;
-
 import dev.murali.springaiintro.model.Answer;
 import dev.murali.springaiintro.model.GetCapitalRequest;
 import dev.murali.springaiintro.model.GetCapitalResponse;
